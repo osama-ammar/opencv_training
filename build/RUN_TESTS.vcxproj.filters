@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\cpp_opencv_test\opencv_training\build\CMakeFiles\d1d8ba2a14b11f9a83fcacac95164a4d\RUN_TESTS_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{E039E587-72DB-3A37-94AF-6416E5252649}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
