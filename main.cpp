@@ -1,8 +1,6 @@
 #include <opencv2/opencv.hpp>
 #include <iostream>
 #include <string>
-#include "opencv2/imgproc/imgproc.hpp"
-#include "opencv2/highgui/highgui.hpp"
 
 
 
@@ -124,7 +122,9 @@ merge(vec_channels, hist_color_equalized_image);
 
 //Convert the histogram equalized image from YCrCb to BGR color space again
 cvtColor(hist_color_equalized_image, hist_color_equalized_image, COLOR_YCrCb2BGR);
-                       
+
+bool color_equalized_image_bool = imwrite("D:/cpp_opencv_test/opencv_training/modified_grey_histogram.png", hist_color_equalized_image); //write the image to a file as JPEG                             
+
 /////////////////////////////////////////////////////////////////////////
 
 
@@ -140,19 +140,11 @@ image_process("D:/cpp_opencv_test/opencv_training/osama.jpg","jiiiiiiiiiii");
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
-
 // displaying image in a window
-
  namedWindow("The man", WINDOW_NORMAL); // Create a window
 // imshow("The man", image); // Show our image inside the created window.
 
-
-
 ///////////////////////////////////////////////////////////////////////////////////////////
-// creating track bar
-
-
-
 //Create track bar to change brightness
 int iSliderValue1 = 50;
 createTrackbar("Brightness", "The man", &iSliderValue1, 100);
