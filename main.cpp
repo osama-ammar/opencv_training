@@ -107,17 +107,55 @@ void image_process(string image_path , string new_name , string processnig_type)
             bool color_equalized_image_bool = imwrite("D:/cpp_opencv_test/opencv_training/modified_grey_histogram.png", output_image); //write the image to a file as JPEG                             
 
 
-
-
-
+    };
 
     };
 
 
-    };
+///////////////////////////////////////////////////////////////////////////////////////////////
+// a callback function used to viwe mouse position of a window 
+
+void CallBackFunc(int event, int x, int y, int flags, void* userdata)
+{
+
+     if  ( event == EVENT_LBUTTONDOWN )
+     {
+          cout << "Left button of the mouse is clicked - position (" << x << ", " << y << ")" << endl;
+     }
+
+     else if  ( event == EVENT_RBUTTONDOWN )
+     {
+          cout << "Right button of the mouse is clicked - position (" << x << ", " << y << ")" << endl;
+     }
+
+     else if  ( event == EVENT_MBUTTONDOWN )
+     {
+          cout << "Middle button of the mouse is clicked - position (" << x << ", " << y << ")" << endl;
+     }
+
+     else if ( event == EVENT_MOUSEMOVE )
+     {
+          cout << "Mouse move over the window - position (" << x << ", " << y << ")" << endl;
+
+     }
+}
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 int main(int argc, char** argv)
 {
@@ -132,10 +170,17 @@ image_process("D:/cpp_opencv_test/opencv_training/osama.jpg","jiiiiiiiiiii","nor
 /////////////////////////////////////////////////////////////////////////////////////////////////
 Mat image = imread("D:/cpp_opencv_test/opencv_training/osama.jpg");
 
-// displaying image in a window
+// Create a window
  namedWindow("The man", WINDOW_NORMAL); // Create a window
-// imshow("The man", image); // Show our image inside the created window.
 
+
+//set the callback function for any mouse event
+setMouseCallback("The man", CallBackFunc, NULL);
+
+//showingthe image in the defined window
+imshow("The man", image); // Show our image inside the created window.
+
+////////////////////////////////////////////////////////////////////////////////////////////////
 
 //Create track bar to change brightness
 int iSliderValue1 = 50;
