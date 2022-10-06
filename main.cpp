@@ -110,6 +110,22 @@ void image_process(string image_path , string new_name , string processnig_type)
     };
 
     };
+/////////////////////////////////////////////////////////////////////////////////////////////////
+//Mat image = imread("D:/cpp_opencv_test/opencv_training/osama.jpg");
+
+static void onMouse(int event, int x, int y, int, void* imgptr){
+
+
+    Point pt1 = Point(x, y);
+    Mat & img = (*(Mat*)imgptr);
+
+     if  ( event == EVENT_LBUTTONDOWN )
+     {
+    circle(img, pt1, 0, Scalar(244, 00, 0), 10, 8, 0);
+    imshow ("The man", img);
+     }
+}
+
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
@@ -121,6 +137,9 @@ void CallBackFunc(int event, int x, int y, int flags, void* userdata)
      if  ( event == EVENT_LBUTTONDOWN )
      {
           cout << "Left button of the mouse is clicked - position (" << x << ", " << y << ")" << endl;
+
+          //cv::drawMarker	( image , Point (x,y) ,Scalar(255, 100, 49) );
+	
      }
 
      else if  ( event == EVENT_RBUTTONDOWN )
@@ -174,11 +193,15 @@ Mat image = imread("D:/cpp_opencv_test/opencv_training/osama.jpg");
  namedWindow("The man", WINDOW_NORMAL); // Create a window
 
 
+
+//cv::drawMarker	( image , Point (100,100) ,Scalar(255, 100, 49),markerType=cv2.MARKER_CROSS );
+
+
 //set the callback function for any mouse event
-setMouseCallback("The man", CallBackFunc, NULL);
+setMouseCallback("The man", onMouse , &image);
 
 //showingthe image in the defined window
-imshow("The man", image); // Show our image inside the created window.
+//imshow("The man", image); // Show our image inside the created window.
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -190,7 +213,7 @@ createTrackbar("Brightness", "The man", &iSliderValue1, 100);
 int iSliderValue2 = 50;
 createTrackbar("Contrast", "The man", &iSliderValue2, 100);
 
-while (true)
+while (1==1)
 {
     //Change the brightness and contrast of the image 
     
