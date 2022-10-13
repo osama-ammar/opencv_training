@@ -182,7 +182,7 @@ int main(int argc, char** argv)
 {
 
 
-image_process("D:/cpp_opencv_test/opencv_training/osama.jpg","jiiiiiiiiiii","normal");
+image_process("D:/cpp_opencv_test/opencv_training/xray.jpg","jiiiiiiiiiii","normal");
 
 
 
@@ -193,7 +193,8 @@ Mat image = imread("D:/cpp_opencv_test/opencv_training/xray.jpg");
 
 // Create a window
  namedWindow("The man", WINDOW_NORMAL); // Create a window
-
+//Resize the Window
+ resizeWindow("The man", 500,700);
 
 
 //cv::drawMarker	( image , Point (100,100) ,Scalar(255, 100, 49),markerType=cv2.MARKER_CROSS );
